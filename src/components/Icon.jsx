@@ -1,0 +1,248 @@
+// Pixel-art icons drawn from character grids — keeps everything crisp and on-theme
+// without needing external icon files.
+const PALETTE = {
+  k: '#000000',
+  w: '#ffffff',
+  g: '#c0c0c0',
+  d: '#808080',
+  y: '#ffff00',
+  o: '#c08040',
+  r: '#ff0000',
+  R: '#800000',
+  G: '#00a000',
+  b: '#0000ff',
+  n: '#000080',
+  t: '#008080',
+  c: '#00ffff',
+  m: '#ff00ff',
+};
+
+export const ICONS = {
+  flag: [
+    'rrrrr.GGGGG',
+    'rrrrr.GGGGG',
+    'rrrrr.GGGGG',
+    'rrrrr.GGGGG',
+    'rrrrr.GGGGG',
+    '...........',
+    'bbbbb.yyyyy',
+    'bbbbb.yyyyy',
+    'bbbbb.yyyyy',
+    'bbbbb.yyyyy',
+    'bbbbb.yyyyy',
+  ],
+  cd: [
+    '.....dddddd.....',
+    '...ddggwwggdd...',
+    '..dgwwwwwwgggd..',
+    '.dgwwccwwwwgggd.',
+    '.dwwccwwwwwwggd.',
+    'dgwccwwwwwwwwggd',
+    'dgwwwwwddwwwwwgd',
+    'dwwwwwd..dwwwwwd',
+    'dwwwwwd..dwwwwwd',
+    'dgwwwwwddwwwwwgd',
+    'dggwwwwwwwwwmmgd',
+    '.dggwwwwwwwmmwd.',
+    '.dgggwwwwwmmwwd.',
+    '..dgggwwwwwwwd..',
+    '...ddggggwwdd...',
+    '.....dddddd.....',
+  ],
+  note: [
+    '................',
+    '......kkkkkkkkk.',
+    '......knnnnnnnk.',
+    '......kkkkkkkkk.',
+    '......k.......k.',
+    '......k.......k.',
+    '......k.......k.',
+    '......k.......k.',
+    '......k.......k.',
+    '......k.......k.',
+    '..kkkkk...kkkkk.',
+    '.knnnnk..knnnnk.',
+    '.knnnnk..knnnnk.',
+    '..kkkk....kkkk..',
+    '................',
+    '................',
+  ],
+  picture: [
+    'oooooooooooooooo',
+    'okkkkkkkkkkkkkko',
+    'okccccccccccccko',
+    'okccccccccyyccko',
+    'okccccccccyyccko',
+    'okccccccccccccko',
+    'okccccGcccccccko',
+    'okcccGGGccccccko',
+    'okccGGGGGccGccko',
+    'okcGGGGGGGGGGcko',
+    'okGGGGGGGGGGGGko',
+    'okGGGGGGGGGGGGko',
+    'okkkkkkkkkkkkkko',
+    'oooooooooooooooo',
+  ],
+  notepad: [
+    '..kkkkkkkkkk....',
+    '..kwwwwwwwwkk...',
+    '..kwwwwwwwwkwk..',
+    '..kwnnnnnnwkkkk.',
+    '..kwwwwwwwwwwwk.',
+    '..kwnnnnnnnnnwk.',
+    '..kwwwwwwwwwwwk.',
+    '..kwnnnnnnnnnwk.',
+    '..kwwwwwwwwwwwk.',
+    '..kwnnnnnnnnnwk.',
+    '..kwwwwwwwwwwwk.',
+    '..kwnnnnnnwwwwk.',
+    '..kwwwwwwwwwwwk.',
+    '..kkkkkkkkkkkkk.',
+  ],
+  mail: [
+    'kkkkkkkkkkkkkkkk',
+    'kkwwwwwwwwwwwwkk',
+    'kwkwwwwwwwwwwkwk',
+    'kwwkwwwwwwwwkwwk',
+    'kwwwkwwwwwwkwwwk',
+    'kwwwwkwwwwkwwwwk',
+    'kwwwwwkkkkwwwwwk',
+    'kwwwwkwwwwkwwwwk',
+    'kwwwkwwwwwwkwwwk',
+    'kwwkwwwwwwwwkwwk',
+    'kkkkkkkkkkkkkkkk',
+  ],
+  cart: [
+    'kk..............',
+    '.k..............',
+    '.kkkkkkkkkkkkkk.',
+    '..kwwwwwwwwwwk..',
+    '..kwkwkwkwkwwk..',
+    '..kwwwwwwwwwk...',
+    '...kwkwkwkwwk...',
+    '...kwwwwwwwk....',
+    '....kkkkkkkk....',
+    '....k.......k...',
+    '....kkkkkkkkkk..',
+    '.....kk....kk...',
+    '.....kk....kk...',
+  ],
+  speaker: [
+    '....k...',
+    '...kk.k.',
+    'kkkgk..k',
+    'kggggk.k',
+    'kggggk.k',
+    'kkkgk..k',
+    '...kk.k.',
+    '....k...',
+  ],
+  computer: [
+    '.kkkkkkkkkkkk...',
+    '.kggggggggggk...',
+    '.kgnnnnnnnngk...',
+    '.kgnccnnnnngk...',
+    '.kgncnnnnnngk...',
+    '.kgnnnnnnnngk...',
+    '.kgnnnnnnnngk...',
+    '.kggggggggggk...',
+    '.kkkkkkkkkkkk...',
+    '....kggggk......',
+    '..kkkkkkkkkkkkk.',
+    '..kgggggggggddk.',
+    '..kggggggggggggk',
+    '..kkkkkkkkkkkkkk',
+  ],
+  info: [
+    '....bbbbbb....',
+    '..bbbbbbbbbb..',
+    '.bbbbbwwbbbbb.',
+    '.bbbbbwwbbbbb.',
+    'bbbbbbbbbbbbbb',
+    'bbbbbwwwbbbbbb',
+    'bbbbbbwwbbbbbb',
+    'bbbbbbwwbbbbbb',
+    'bbbbbbwwbbbbbb',
+    '.bbbbbwwbbbbb.',
+    '.bbbbwwwwbbbb.',
+    '..bbbbbbbbbb..',
+    '....bbbbbb....',
+  ],
+  shutdown: [
+    '......kk......',
+    '..kk..kk..kk..',
+    '.kk...kk...kk.',
+    'kk....kk....kk',
+    'kk....kk....kk',
+    'kk..........kk',
+    'kk..........kk',
+    '.kk........kk.',
+    '..kkk....kkk..',
+    '....kkkkkk....',
+  ],
+  // Player controls
+  play: ['k......', 'kk.....', 'kkk....', 'kkkk...', 'kkkkk..', 'kkkk...', 'kkk....', 'kk.....', 'k......'],
+  pause: ['kk.kk', 'kk.kk', 'kk.kk', 'kk.kk', 'kk.kk', 'kk.kk', 'kk.kk', 'kk.kk', 'kk.kk'],
+  prev: ['k.....k', 'k....kk', 'k...kkk', 'k..kkkk', 'k.kkkkk', 'k..kkkk', 'k...kkk', 'k....kk', 'k.....k'],
+  next: ['k.....k', 'kk....k', 'kkk...k', 'kkkk..k', 'kkkkk.k', 'kkkk..k', 'kkk...k', 'kk....k', 'k.....k'],
+  shuffle: [
+    '.......k.',
+    'kk...kkkk',
+    '..k.k..k.',
+    '...k.....',
+    '..k.k..k.',
+    'kk...kkkk',
+    '.......k.',
+  ],
+  repeat: [
+    '...k.....',
+    '.kkkkkkk.',
+    'k..k....k',
+    'k.......k',
+    'k....k..k',
+    '.kkkkkkk.',
+    '.....k...',
+  ],
+  queue: ['kkkkkkkkk', '.........', 'kkkkkkkkk', '.........', 'kkkkkkkkk', '.........', 'kkkkk.k..', '......kk.', 'kkkkk.kkk'],
+  device: [
+    'kkkkkkk...',
+    'kwwwwwk...',
+    'kwkkkkkkk.',
+    'kwkgggggk.',
+    'kwkgggggk.',
+    'kkkgggggk.',
+    '..kgggggk.',
+    '..kggkggk.',
+    '..kkkkkkk.',
+  ],
+  heart: ['.GG.GG.', 'GGGGGGG', 'GGGGGGG', '.GGGGG.', '..GGG..', '...G...'],
+  heartOff: ['.kk.kk.', 'k..k..k', 'k.....k', '.k...k.', '..k.k..', '...k...'],
+};
+
+export default function Icon({ name, scale = 1, className = '', title }) {
+  const grid = ICONS[name];
+  if (!grid) return null;
+  const h = grid.length;
+  const w = grid[0].length;
+  const rects = [];
+  for (let y = 0; y < h; y++) {
+    for (let x = 0; x < w; x++) {
+      const fill = PALETTE[grid[y][x]];
+      if (fill) rects.push(<rect key={`${x}-${y}`} x={x} y={y} width="1.02" height="1.02" fill={fill} />);
+    }
+  }
+  return (
+    <svg
+      className={`px-icon ${className}`}
+      width={w * scale}
+      height={h * scale}
+      viewBox={`0 0 ${w} ${h}`}
+      shapeRendering="crispEdges"
+      aria-hidden={title ? undefined : true}
+      role={title ? 'img' : undefined}
+    >
+      {title && <title>{title}</title>}
+      {rects}
+    </svg>
+  );
+}

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="500" viewBox="0 0 400 500">
+  <rect width="400" height="500" fill="#d4d4d4"/>
+  <rect x="16" y="16" width="368" height="468" fill="none" stroke="#808080" stroke-width="2" stroke-dasharray="8 6"/>
+  <line x1="16" y1="16" x2="384" y2="484" stroke="#bdbdbd" stroke-width="1"/>
+  <line x1="384" y1="16" x2="16" y2="484" stroke="#bdbdbd" stroke-width="1"/>
+  <rect x="60" y="205" width="280" height="90" fill="#e6e6e6" stroke="#808080" stroke-width="2"/>
+  <text x="200" y="244" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#333333">SAMPLE PAINTING 04</text>
+  <text x="200" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#666666">Image coming soon</text>
+</svg>
