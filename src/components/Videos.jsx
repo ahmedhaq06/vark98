@@ -7,6 +7,7 @@ const VIDEOS = [
   {
     id: 'lenslady-x-vark',
     title: 'Lenslady x VARK',
+    subtitle: 'BOUND4LOVE music video OUT NOW !',
     src: '/videos/lenslady-x-vark.mp4',
   },
 ];
@@ -115,7 +116,9 @@ export default function Videos() {
           </div>
 
           <div className="wmp-lcd field-border">
-            <span className="wmp-lcd-title">{video.title}</span>
+            <span className="wmp-lcd-title">
+              {video.title} — {video.subtitle}
+            </span>
             <span className="wmp-lcd-time">
               {formatTime(time)} / {formatTime(duration)}
             </span>

@@ -296,10 +296,10 @@ button.pressed {
   font-size: 26px;
   font-style: normal;
   color: #ff6a00;
-  margin-left: 4px;
+  margin-left: 12px;
   vertical-align: top;
   position: relative;
-  top: 6px;
+  top: 4px;
 }
 
 .boot-loader {
@@ -587,8 +587,8 @@ button.pressed {
   letter-spacing: 0;
   vertical-align: top;
   position: relative;
-  top: 0.3em;
-  margin-left: 6px;
+  top: 0.15em;
+  margin-left: 0.16em;
 }
 
 .welcome-tag {

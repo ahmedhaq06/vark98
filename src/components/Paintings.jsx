@@ -77,7 +77,7 @@ export default function Paintings() {
     <>
       <Window
         id="paintings"
-        title="paintings - Paint"
+        title="Paintings for Sale"
         icon="picture"
         className="paint"
         menu={['File', 'Edit', 'View', 'Image', 'Options', 'Help']}

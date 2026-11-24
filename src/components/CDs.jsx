@@ -17,7 +17,7 @@ export default function CDs() {
     <>
       <Window
         id="cds"
-        title="D:\VARK Discography"
+        title="D:\VARK CD"
         icon="cd"
         className="explorer"
         menu={['File', 'Edit', 'View', 'Go', 'Favorites', 'Help']}
@@ -36,7 +36,7 @@ export default function CDs() {
           <label htmlFor="cd-addr">Address</label>
           <div className="explorer-addr-field field-border">
             <Icon name="cd" />
-            <input id="cd-addr" readOnly value="D:\VARK Discography" />
+            <input id="cd-addr" readOnly value="D:\VARK CD" />
           </div>
         </div>
 
