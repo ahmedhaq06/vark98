@@ -896,7 +896,7 @@ button.pressed {
 .painting-frame img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .painting.is-sold img {
@@ -1794,7 +1794,7 @@ button.pressed {
 .ie-card-thumb img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .ie-card.is-unavailable img {
