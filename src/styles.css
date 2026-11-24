@@ -865,7 +865,7 @@ button.pressed {
   gap: 6px;
   background: none;
   box-shadow: none;
-  color: #000;
+  color: inherit;
   text-shadow: none;
   text-align: left;
 }
@@ -877,7 +877,7 @@ button.pressed {
 
 .painting:hover .painting-frame,
 .painting:focus-visible .painting-frame {
-  outline: 1px dotted #000;
+  outline: 1px dotted currentColor;
   outline-offset: 3px;
 }
 
@@ -887,9 +887,9 @@ button.pressed {
   display: grid;
   place-items: center;
   padding: 8px;
-  background: #fff;
+  background: #141414;
   border: 8px solid #3b2a1a;
-  box-shadow: 2px 3px 0 rgba(0, 0, 0, 0.35);
+  box-shadow: 2px 3px 0 rgba(0, 0, 0, 0.5);
   overflow: hidden;
 }
 
@@ -908,7 +908,7 @@ button.pressed {
 }
 
 .painting-price {
-  color: #333;
+  opacity: 0.8;
 }
 
 .sold-stamp {

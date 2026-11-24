@@ -67,8 +67,8 @@ function PaintingCard({ p, onOpen }) {
 
 export default function Paintings() {
   const [tool, setTool] = useState('pencil');
-  const [fg, setFg] = useState('#000000');
-  const [bg, setBg] = useState('#ffffff');
+  const [fg, setFg] = useState('#f0f0f0');
+  const [bg, setBg] = useState('#1c1c1c');
   const [open, setOpen] = useState(null);
 
   const available = paintings.filter((p) => !p.sold).length;
@@ -107,7 +107,7 @@ export default function Paintings() {
                   <p className="muted">Original works by VARK will be available to buy here soon.</p>
                 </div>
               ) : (
-                <div className="painting-grid">
+                <div className="painting-grid" style={{ color: fg }}>
                   {paintings.map((p) => (
                     <PaintingCard key={p.id} p={p} onOpen={setOpen} />
                   ))}
