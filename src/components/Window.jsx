@@ -20,7 +20,14 @@ export default function Window({
 }) {
   const [state, setState] = useState('normal'); // normal | minimized | maximized | closed
 
-  const toggle = (s) => setState((cur) => (cur === s ? 'normal' : s));
+  const onMinimize = () => {
+    setState((cur) => (cur === 'maximized' || cur === 'minimized' ? 'normal' : 'minimized'));
+  };
+
+  const onMaximize = () => {
+    if (!maximizable) return;
+    setState((cur) => (cur === 'maximized' ? 'normal' : 'maximized'));
+  };
 
   return (
     <section
@@ -34,13 +41,13 @@ export default function Window({
           <span>{title}</span>
         </div>
         <div className="title-bar-controls">
-          <button aria-label="Minimize" onClick={() => toggle('minimized')} />
+          <button aria-label="Minimize" onClick={onMinimize} />
           <button
             aria-label={state === 'maximized' ? 'Restore' : 'Maximize'}
             disabled={!maximizable}
-            onClick={() => maximizable && toggle('maximized')}
+            onClick={onMaximize}
           />
-          {closable && <button aria-label="Close" onClick={() => toggle('closed')} />}
+          {closable && <button aria-label="Close" onClick={() => setState('closed')} />}
         </div>
       </div>
 

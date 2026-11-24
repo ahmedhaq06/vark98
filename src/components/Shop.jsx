@@ -24,6 +24,7 @@ function buildCatalog() {
     id: p.id,
     title: p.title,
     image: p.image,
+    images: p.images?.length ? p.images : [p.image],
     price: p.price,
     year: p.year,
     subtitle: [p.medium, p.size].filter(Boolean).join(' · '),
@@ -40,6 +41,7 @@ function buildCatalog() {
     id: c.id,
     title: c.title,
     image: c.cover,
+    images: c.images?.length ? c.images : [c.cover],
     price: c.price,
     year: c.year,
     subtitle: `${c.tracks?.length || 0} tracks · Audio CD`,
@@ -102,7 +104,7 @@ function ProductCard({ item, inCart, onAdd, onView }) {
   );
 }
 
-function PaintViewer({ item }) {
+function PaintViewer({ item, activeImage }) {
   const colors = item.colors?.length ? item.colors : ['#000000', '#ffffff', '#ff0000'];
   const [tool, setTool] = useState('pencil');
   const [fg, setFg] = useState(colors[0]);
@@ -145,7 +147,7 @@ function PaintViewer({ item }) {
 
         <div className="paint-canvas-wrap sunken-panel">
           <div className="ie-paint-canvas" style={{ background: bg }}>
-            <img src={item.image} alt={item.title} />
+            <img src={activeImage || item.image} alt={item.title} />
             {item.unavailable && <span className="ie-sold-stamp big">{item.unavailableLabel}</span>}
           </div>
         </div>
@@ -183,6 +185,8 @@ function PaintViewer({ item }) {
 }
 
 function ProductDetail({ item, inCart, onAdd, onBack }) {
+  const [angleIdx, setAngleIdx] = useState(0);
+
   if (!item) {
     return (
       <div className="ie-not-found">
@@ -192,6 +196,9 @@ function ProductDetail({ item, inCart, onAdd, onBack }) {
       </div>
     );
   }
+
+  const gallery = item.images?.length ? item.images : [item.image];
+  const activeImg = gallery[angleIdx] || item.image;
 
   return (
     <div className="ie-detail">
@@ -209,15 +216,33 @@ function ProductDetail({ item, inCart, onAdd, onBack }) {
       </div>
 
       <div className={`ie-detail-grid ${item.type === 'painting' ? 'is-painting' : ''}`}>
-        {item.type === 'painting' ? (
-          <PaintViewer item={item} />
-        ) : (
-          <div className="ie-detail-img">
-            <img src={item.image} alt={item.title} />
-            {item.sample && <span className="ie-sample-tag">SAMPLE</span>}
-            {item.unavailable && <span className="ie-sold-stamp big">{item.unavailableLabel}</span>}
-          </div>
-        )}
+        <div>
+          {item.type === 'painting' ? (
+            <PaintViewer item={item} activeImage={activeImg} />
+          ) : (
+            <div className="ie-detail-img">
+              <img src={activeImg} alt={item.title} />
+              {item.sample && <span className="ie-sample-tag">SAMPLE</span>}
+              {item.unavailable && <span className="ie-sold-stamp big">{item.unavailableLabel}</span>}
+            </div>
+          )}
+
+          {gallery.length > 1 && (
+            <div className="ie-angles">
+              {gallery.map((src, idx) => (
+                <button
+                  key={src}
+                  type="button"
+                  className={`ie-angle-btn ${idx === angleIdx ? 'active' : ''}`}
+                  onClick={() => setAngleIdx(idx)}
+                  aria-label={`Angle ${idx + 1}`}
+                >
+                  <img src={src} alt="" />
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
 
         <div className="ie-detail-info">
           <h2 className="ie-detail-title">{item.title}</h2>
@@ -272,7 +297,8 @@ function CartPage({ cart }) {
         </div>
       ) : (
         <>
-          <table className="ie-cart-table">
+          <div className="ie-cart-table-wrap">
+            <table className="ie-cart-table">
             <thead>
               <tr>
                 <th>Item</th>
@@ -318,7 +344,8 @@ function CartPage({ cart }) {
                 </tr>
               ))}
             </tbody>
-          </table>
+            </table>
+          </div>
 
           <div className="ie-cart-summary">
             <div>

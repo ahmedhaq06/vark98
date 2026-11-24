@@ -183,6 +183,7 @@ export const ICONS = {
   // Player controls
   play: ['k......', 'kk.....', 'kkk....', 'kkkk...', 'kkkkk..', 'kkkk...', 'kkk....', 'kk.....', 'k......'],
   pause: ['kk.kk', 'kk.kk', 'kk.kk', 'kk.kk', 'kk.kk', 'kk.kk', 'kk.kk', 'kk.kk', 'kk.kk'],
+  stop: ['kkkkkkk', 'kkkkkkk', 'kkkkkkk', 'kkkkkkk', 'kkkkkkk', 'kkkkkkk', 'kkkkkkk'],
   prev: ['k.....k', 'k....kk', 'k...kkk', 'k..kkkk', 'k.kkkkk', 'k..kkkk', 'k...kkk', 'k....kk', 'k.....k'],
   next: ['k.....k', 'kk....k', 'kkk...k', 'kkkk..k', 'kkkkk.k', 'kkkk..k', 'kkk...k', 'kk....k', 'k.....k'],
   shuffle: [
@@ -217,6 +218,35 @@ export const ICONS = {
   ],
   heart: ['.GG.GG.', 'GGGGGGG', 'GGGGGGG', '.GGGGG.', '..GGG..', '...G...'],
   heartOff: ['.kk.kk.', 'k..k..k', 'k.....k', '.k...k.', '..k.k..', '...k...'],
+  globe: [
+    '....kkkkkk....',
+    '..kkcccccckk..',
+    '.kccGGccGGcck.',
+    '.kcGGGccGGGck.',
+    'kccGGccccGGcck',
+    'kccccccccccGGk',
+    'kccGGccccccGGk',
+    'kccGGGcccccccG',
+    '.kcGGGccGGcck.',
+    '.kccGGccGGcck.',
+    '..kkcccccckk..',
+    '....kkkkkk....',
+  ],
+  calendar: [
+    '..kk......kk..',
+    'kkkkkkkkkkkkkk',
+    'krrrrrrrrrrrrk',
+    'krrrrrrrrrrrrk',
+    'kkkkkkkkkkkkkk',
+    'kwwwwwwwwwwwwk',
+    'kwkkwkkwkkwkwk',
+    'kwwwwwwwwwwwwk',
+    'kwkkwkkwkkwkwk',
+    'kwwwwwwwwwwwwk',
+    'kwkkwkkwkkwkwk',
+    'kwwwwwwwwwwwwk',
+    'kkkkkkkkkkkkkk',
+  ],
 };
 
 export default function Icon({ name, scale = 1, className = '', title }) {

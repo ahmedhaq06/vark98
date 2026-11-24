@@ -53,7 +53,10 @@ export default function CDs() {
                 <button
                   key={c.id}
                   className={`explorer-item ${selected === c.id ? 'selected' : ''}`}
-                  onClick={() => setSelected(c.id)}
+                  onClick={() => {
+                    setSelected(c.id);
+                    if (window.matchMedia('(pointer: coarse)').matches) setOpen(c);
+                  }}
                   onDoubleClick={() => setOpen(c)}
                   onKeyDown={(e) => e.key === 'Enter' && setOpen(c)}
                 >

@@ -3,8 +3,11 @@ import BootScreen from './components/BootScreen.jsx';
 import Taskbar from './components/Taskbar.jsx';
 import Welcome from './components/Welcome.jsx';
 import MusicPlayer from './components/MusicPlayer.jsx';
+import Videos from './components/Videos.jsx';
 import Paintings from './components/Paintings.jsx';
 import CDs from './components/CDs.jsx';
+import Gigs from './components/Gigs.jsx';
+import Links from './components/Links.jsx';
 import Contact from './components/Contact.jsx';
 import Shop from './components/Shop.jsx';
 import StickyNote from './components/StickyNote.jsx';
@@ -48,10 +51,14 @@ export default function App() {
             <Shop path={path} />
           ) : (
             <>
+              <StickyNote />
               <Welcome />
               <MusicPlayer />
               <Paintings />
               <CDs />
+              <Gigs />
+              <Videos />
+              <Links />
               <Contact />
             </>
           )}
@@ -59,12 +66,7 @@ export default function App() {
             © {new Date().getFullYear()} {site.artist}. All rights reserved.
           </p>
         </main>
-        {!onShop && (
-          <>
-            <StickyNote />
-            <RoverChat />
-          </>
-        )}
+        {!onShop && <RoverChat />}
         <Taskbar onShutDown={shutDown} />
       </div>
     </CartProvider>

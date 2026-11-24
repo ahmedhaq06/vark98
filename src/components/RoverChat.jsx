@@ -6,13 +6,16 @@ import { site } from '../config.js';
  */
 async function askRover(question) {
   const q = question.toLowerCase();
-  if (q.includes('who') || q.includes('vark') || q.includes('music') || q.includes('genre')) {
-    return `${site.artist} is a ${site.tagline} artist. I'm still waiting on his full bio and tracklist!`;
+  if (q.includes('album') || q.includes('ep') || q.includes('song') || q.includes('shakti') || q.includes('insaaniyat') || q.includes('release')) {
+    return `${site.artist} has put out 4 albums, 2 EPs, and 100+ songs — debuting with INSAANIYAT SE MUSHKIL. Their 5th album, SHAKTI, is on the way to conclude the GREEN, BLUE & RED series!`;
+  }
+  if (q.includes('who') || q.includes('vark') || q.includes('music') || q.includes('genre') || q.includes('style') || q.includes('about')) {
+    return `${site.artist} is a soul-full, surrealist, abstract expressionist artist who makes rap music, paints, directs & draws. "No creation is larger than the process itself."`;
   }
   if (q.includes('paint') || q.includes('art') || q.includes('cd') || q.includes('shop') || q.includes('buy') || q.includes('ship')) {
     return `You can browse ${site.artist}'s paintings and CDs in the Shop (All India shipping).`;
   }
-  return `Woof! My knowledge base isn't connected yet — check back soon to ask more about ${site.artist}.`;
+  return `Woof! Ask me about ${site.artist}'s albums, SHAKTI, their art style, or the Shop.`;
 }
 
 /** Windows XP Search Companion-style dog in the bottom-right corner. */

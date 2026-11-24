@@ -2,11 +2,12 @@
 export const site = {
   artist: 'VARK',
   tagline: 'Desi Hip Hop / Rap',
-  email: '', // e.g. 'bookings@vark.in' — shown on the Contact window when set
+  email: 'vark19team@gmail.com', // shown on the Contact window
   socials: [
-    // { label: 'Instagram', url: 'https://instagram.com/...' },
-    // { label: 'Spotify', url: 'https://open.spotify.com/artist/...' },
-    // { label: 'YouTube', url: 'https://youtube.com/@...' },
+    { label: 'Spotify', sub: 'Stream VARK on Spotify', url: 'https://open.spotify.com/artist/1ZPrQdzfOL25ppQa4LlkpJ?si=i2akyy_nRmKVZ12p87JTmg&utm_source=copy-link&sci=spotify%3Acard-config%3A0LbWbIoKXlIzHghf7dglIz' },
+    { label: 'Apple Music', sub: 'Listen on Apple Music', url: 'https://music.apple.com/in/artist/vark/1494625555?ls' },
+    { label: 'YouTube', sub: '@vark_19', url: 'https://youtube.com/@vark_19?si=xJZYMdlgS1JGScAA' },
+    { label: 'Instagram', sub: '@vark_19', url: 'https://www.instagram.com/vark_19?knvt=dnM4OHZhNm1yd2pu' },
   ],
 };
 

@@ -6,7 +6,7 @@ import { navigate } from '../router.js';
 
 const go = (id) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-/** Hero section, modelled on the Windows 98 "Welcome" screen. */
+/** Minimalist Windows 98 Welcome window. */
 export default function Welcome() {
   const links = SECTIONS.filter((s) => s.id !== 'home');
   return (
@@ -33,9 +33,14 @@ export default function Welcome() {
           </ul>
           <div className="welcome-info sunken-panel">
             <p>
-              <b>{site.artist}</b> — Music, original paintings &amp; CDs.
+              <b>{site.artist}</b> is a soul-full, surrealist, abstract expressionist, New Age radical artist — on a journey, exploring, learning, and making sense of it all.
             </p>
-            <p className="muted">Pick a section on the left or use Start below.</p>
+            <p>
+              They make rap music, paint, direct &amp; draw. Boundaries don&apos;t exist when it comes to expressing yourself, and the whole point of creating is the process itself. <em>No creation is larger than the process itself.</em>
+            </p>
+            <p>
+              <b>U CAN FEEL IT IN THE MUSIC.</b> So far, they&apos;ve put out 4 albums, 2 EPs, and 100+ songs — debuting with <b>INSAANIYAT SE MUSHKIL</b>, and now on the way to their 5th album, <b>SHAKTI</b>, concluding the GREEN, BLUE &amp; RED series.
+            </p>
           </div>
         </div>
       </div>

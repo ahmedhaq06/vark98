@@ -137,9 +137,54 @@ button.pressed {
 }
 
 .win.is-maximized {
-  width: calc(100vw - 16px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: var(--taskbar-h);
+  z-index: 98;
+  width: auto;
+  height: auto;
   max-width: none;
-  margin-left: calc(50% - 50vw + 8px);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.win.is-maximized .window-body {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.win.is-maximized .paint-main,
+.win.is-maximized .explorer-view,
+.win.is-maximized .spotify-wrap,
+.win.is-maximized .gigs-panel {
+  flex: 1;
+  min-height: 0;
+  height: auto;
+}
+
+.win.is-maximized .spotify-embed {
+  height: 100%;
+  min-height: 352px;
+}
+
+.win.is-maximized .wmp-screen {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.win.is-maximized .wmp-screen video {
+  max-height: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .win.is-minimized .title-bar,
@@ -557,36 +602,51 @@ button.pressed {
 
 .welcome-cols {
   display: grid;
-  grid-template-columns: 220px 1fr;
+  grid-template-columns: 230px 1fr;
   gap: 12px;
   margin-top: 12px;
+  align-items: stretch;
 }
 
 .welcome-links {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 6px;
+  align-content: start;
+}
+
+.welcome-links li:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
 }
 
 .welcome-links button {
   width: 100%;
+  min-width: 0;
   min-height: 36px;
+  padding: 0 8px;
   justify-content: flex-start;
-  gap: 10px;
+  gap: 7px;
 }
 
 .welcome-info {
-  padding: 12px 14px;
-  font-family: Arial, sans-serif;
-  font-size: 13px;
-  line-height: 1.5;
+  padding: 14px 16px;
+  font-family: 'Pixelated MS Sans Serif', Arial, sans-serif;
+  font-size: 11px;
+  line-height: 1.65;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .welcome-info p {
   margin: 0 0 10px;
+}
+
+.welcome-info p:last-child {
+  margin-bottom: 0;
 }
 
 .welcome-hint {
@@ -600,6 +660,21 @@ button.pressed {
 /* =========================================================
    Music player
    ========================================================= */
+/* =========================================================
+   Music player (Spotify embed)
+   ========================================================= */
+.spotify-wrap {
+  padding: 2px;
+  background: #000;
+}
+
+.spotify-embed {
+  display: block;
+  width: 100%;
+  height: 352px;
+  border: 0;
+}
+
 .player {
   width: 240px;
   flex: none;
@@ -1119,6 +1194,249 @@ button.pressed {
 }
 
 /* =========================================================
+   Music Videos (Windows Media Player) & Photos
+   ========================================================= */
+.wmp-screen {
+  background: #000;
+  padding: 2px;
+}
+
+.wmp-screen video {
+  display: block;
+  width: 100%;
+  max-height: 520px;
+  background: #000;
+}
+
+.wmp-controls {
+  padding: 6px 2px 2px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.wmp-seek {
+  width: 100%;
+}
+
+.wmp-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.wmp-transport,
+.wmp-vol-wrap {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.wmp-lcd {
+  flex: 1;
+  min-width: 160px;
+  background: #000;
+  color: #00ff66;
+  padding: 4px 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+}
+
+.wmp-lcd-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.wmp-lcd-time {
+  flex: none;
+}
+
+.wmp-vol {
+  width: 68px;
+}
+
+.wmp-fs-btn {
+  min-width: 28px;
+  min-height: 26px;
+  height: 28px;
+  padding: 0 6px;
+  font-family: 'Courier New', monospace;
+  font-weight: 700;
+}
+
+.photos-grid {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 10px;
+  max-height: 440px;
+}
+
+.photo-thumb {
+  min-width: 0;
+  min-height: 0;
+  padding: 3px;
+  aspect-ratio: 1;
+  overflow: hidden;
+}
+
+.photo-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo-modal {
+  background: #000;
+  display: grid;
+  place-items: center;
+}
+
+.photo-modal img {
+  max-height: 70vh;
+  width: auto;
+  object-fit: contain;
+}
+
+.photo-modal-cap {
+  margin: 8px 0 0;
+  text-align: center;
+  font-weight: 700;
+}
+
+.ie-angles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.ie-angle-btn {
+  min-width: 0;
+  min-height: 0;
+  width: 52px;
+  height: 52px;
+  padding: 2px;
+}
+
+.ie-angle-btn.active {
+  outline: 2px solid var(--navy);
+}
+
+.ie-angle-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* =========================================================
+   Gigs (Tour Dates)
+   ========================================================= */
+.gigs-panel {
+  min-height: 180px;
+}
+
+.gigs-empty {
+  padding: 28px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 6px;
+}
+
+.gigs-empty p {
+  margin: 0;
+}
+
+.gigs-empty button {
+  margin-top: 6px;
+}
+
+.gigs-table {
+  width: 100%;
+}
+
+.gigs-table td,
+.gigs-table th {
+  padding: 6px 10px;
+  height: auto;
+}
+
+.gigs-sold {
+  color: #c00000;
+  font-weight: 700;
+}
+
+/* =========================================================
+   Links (Favorites)
+   ========================================================= */
+.links-grid {
+  padding: 12px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 10px;
+}
+
+.link-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  background: var(--face);
+  box-shadow: var(--bevel-out);
+  color: #000;
+  text-decoration: none;
+}
+
+.link-card:hover {
+  background: #dfdfdf;
+}
+
+.link-card:active {
+  box-shadow: var(--bevel-in);
+}
+
+.link-card-icon {
+  flex: none;
+  display: grid;
+  place-items: center;
+}
+
+.link-card-text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.link-card-text b {
+  font-size: 12px;
+  color: var(--navy);
+}
+
+.link-card-text small {
+  font-size: 11px;
+  color: #444;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.link-card-arrow {
+  font-size: 13px;
+  color: #444;
+}
+
+/* =========================================================
    Contact (Outlook Express)
    ========================================================= */
 .mail-toolbar {
@@ -1154,8 +1472,8 @@ button.pressed {
   display: block;
   width: 100%;
   resize: vertical;
-  font-family: Arial, sans-serif;
-  font-size: 13px;
+  font-family: 'Pixelated MS Sans Serif', Arial, sans-serif;
+  font-size: 11px;
 }
 
 .mail-socials {
@@ -1987,9 +2305,9 @@ button.pressed {
   margin: 6px;
   padding: 8px;
   background: #fff;
-  font-family: Arial, sans-serif;
-  font-size: 12px;
-  line-height: 1.4;
+  font-family: 'Pixelated MS Sans Serif', Arial, sans-serif;
+  font-size: 11px;
+  line-height: 1.45;
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -2025,14 +2343,37 @@ button.pressed {
 }
 
 /* =========================================================
-   Small screens (basic — full mobile pass to be discussed)
+   Music player (Spotify embed)
+   ========================================================= */
+.spotify-wrap {
+  padding: 2px;
+  background: #000;
+}
+
+.spotify-embed {
+  display: block;
+  width: 100%;
+  height: 352px;
+  border: 0;
+}
+
+/* =========================================================
+   Small screens (mobile pass)
    ========================================================= */
 @media (max-width: 760px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  .desktop-content {
+    padding: 12px 10px calc(var(--taskbar-h) + 84px);
+    gap: 18px;
+  }
+
   .sticky-note {
-    top: 10px;
-    right: 10px;
-    bottom: auto;
-    width: 168px;
+    position: static;
+    width: 100%;
   }
 
   .rover-wrap {
@@ -2041,12 +2382,12 @@ button.pressed {
   }
 
   .rover-btn img {
-    height: 84px;
+    height: 64px;
   }
 
   .rover-bubble {
     width: calc(100vw - 20px);
-    max-width: 280px;
+    max-width: 300px;
   }
 
   .welcome-cols,
@@ -2055,45 +2396,93 @@ button.pressed {
   .ie-store-layout,
   .ie-detail-grid,
   .ie-detail-grid.is-painting,
-  .wizard-body {
+  .wizard-body,
+  .wizard-form,
+  .mail-fields {
     grid-template-columns: 1fr;
   }
 
-  .wizard-form {
-    grid-template-columns: 1fr;
-  }
-
-  .wizard-form label {
+  .wizard-form label,
+  .mail-fields label {
     text-align: left;
   }
 
-  .task-btn span {
+  .taskbar-tasks {
     display: none;
   }
 
-  .task-btn {
-    flex: 0 0 28px;
-    justify-content: center;
-  }
-
-  .player {
-    width: 100%;
-  }
-
-  .playlist {
-    min-width: 100%;
+  .taskbar .tray {
+    margin-left: auto;
   }
 
   .paint-main {
-    height: 460px;
+    height: 440px;
   }
 
   .paint-toolbox {
     display: none;
   }
 
+  .painting-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .paint-palette {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
   .paint-swatches {
     grid-template-columns: repeat(14, minmax(10px, 16px));
+  }
+
+  .paint-shop-btn {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .gigs-panel,
+  .ie-cart-table-wrap {
+    overflow-x: auto;
+  }
+
+  .ie-sidebar {
+    border-right: none;
+    border-bottom: 1px solid #bdbdbd;
+    padding: 8px;
+    gap: 8px;
+  }
+
+  .ie-sidebar ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .ie-sidebar ul li {
+    flex: 1 1 auto;
+  }
+
+  .ie-sidebar ul button {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .ie-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .wizard-sidebar {
+    flex-direction: row;
+    align-items: center;
+    padding: 8px 12px;
+  }
+
+  .wizard-steps {
+    flex-direction: row;
+    gap: 10px;
   }
 }
 

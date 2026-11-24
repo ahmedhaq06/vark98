@@ -10,6 +10,8 @@ export const SECTIONS = [
   { id: 'paintings', label: 'Paintings', icon: 'picture' },
   { id: 'cds', label: 'CDs', icon: 'cd' },
   { id: 'shop', label: 'Shop', icon: 'cart', route: '/shop' },
+  { id: 'gigs', label: 'Gigs', icon: 'calendar' },
+  { id: 'links', label: 'Links', icon: 'globe' },
   { id: 'contact', label: 'Contact', icon: 'mail' },
 ];
 
