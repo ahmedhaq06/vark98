@@ -104,11 +104,15 @@ function ProductCard({ item, inCart, onAdd, onView }) {
   );
 }
 
+const VIEWER_PALETTE = [
+  '#000000', '#808080', '#800000', '#808000', '#008000', '#008080', '#000080', '#800080',
+  '#ffffff', '#c0c0c0', '#ff0000', '#ffff00', '#00ff00', '#00ffff', '#0000ff', '#ff00ff',
+];
+
 function PaintViewer({ item, activeImage }) {
-  const colors = item.colors?.length ? item.colors : ['#000000', '#ffffff', '#ff0000'];
-  const [tool, setTool] = useState('pencil');
-  const [fg, setFg] = useState(colors[0]);
-  const [bg, setBg] = useState('#ffffff');
+  const [tool, setTool] = useState('fill');
+  const [fg, setFg] = useState(item.colors?.[0] || '#000000');
+  const [bg, setBg] = useState('#1c1c1c');
 
   return (
     <div className="window win ie-paint-viewer">
@@ -159,17 +163,17 @@ function PaintViewer({ item, activeImage }) {
           <span className="sw-fg" style={{ background: fg }} />
         </div>
         <div className="ie-paint-swatches">
-          {colors.map((c) => (
+          {VIEWER_PALETTE.map((c) => (
             <button
               key={c}
               className="paint-swatch"
               style={{ background: c }}
-              aria-label={`Colour ${c}`}
-              title={`Painting colour ${c}`}
-              onClick={() => setFg(c)}
+              aria-label={`Canvas colour ${c}`}
+              title="Click to change background colour"
+              onClick={() => setBg(c)}
               onContextMenu={(e) => {
                 e.preventDefault();
-                setBg(c);
+                setFg(c);
               }}
             />
           ))}
@@ -177,8 +181,8 @@ function PaintViewer({ item, activeImage }) {
       </div>
 
       <div className="status-bar">
-        <p className="status-bar-field">For Help, click Help Topics on the Help Menu.</p>
-        <p className="status-bar-field">{colors.length} colours</p>
+        <p className="status-bar-field">Click any colour to change the canvas background.</p>
+        <p className="status-bar-field">{VIEWER_PALETTE.length} colours</p>
       </div>
     </div>
   );

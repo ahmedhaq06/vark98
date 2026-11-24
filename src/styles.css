@@ -1931,14 +1931,14 @@ button.pressed {
 }
 
 .ie-paint-swatches {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2px;
+  display: grid;
+  grid-template-columns: repeat(8, 18px);
+  gap: 1px;
 }
 
 .ie-paint-swatches .paint-swatch {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
 }
 
 .ie-detail-img {
