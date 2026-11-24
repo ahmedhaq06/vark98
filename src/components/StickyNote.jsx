@@ -32,7 +32,7 @@ export default function StickyNote() {
       </div>
       {!minimized && (
         <div className="sticky-body">
-          <p className="sticky-text">NEW SINGLE DROPPING SOON.</p>
+          <p className="sticky-text">5th album SHAKTI!, comes out in 2027.</p>
           <span className="sticky-sign">— VARK</span>
         </div>
       )}
