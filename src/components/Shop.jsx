@@ -269,6 +269,20 @@ function ProductDetail({ item, inCart, onAdd, onBack }) {
             </div>
           )}
 
+          {item.type === 'painting' && (
+            <div className="ie-painting-note">
+              <p>This piece will be delivered, framed and well packaged dont you worry (also with a little surprise) !</p>
+              <p>
+                I know the prices are high and you could feel hesitant to order directly from the website in that case you can directly contact me on my instagram dm (painting page{' '}
+                <a href="https://www.instagram.com/pratibimbmeriaankhmesirf" target="_blank" rel="noreferrer">
+                  @pratibimbmeriaankhmesirf
+                </a>
+                ) or{' '}
+                <a href={`mailto:${site.email || 'vark19team@gmail.com'}`}>email</a>, I am always available to here your queries.
+              </p>
+            </div>
+          )}
+
           <div className="ie-detail-actions">
             <button
               className="default"

@@ -1983,6 +1983,27 @@ button.pressed {
   margin-top: 14px;
 }
 
+.ie-painting-note {
+  margin: 12px 0;
+  padding: 10px 12px;
+  background: #ffffe1;
+  border: 1px solid #999;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.ie-painting-note p {
+  margin: 0 0 6px;
+}
+
+.ie-painting-note p:last-child {
+  margin-bottom: 0;
+}
+
+.ie-painting-note a {
+  color: var(--navy);
+}
+
 /* Full cart page */
 .ie-cart-empty {
   padding: 24px 0;
