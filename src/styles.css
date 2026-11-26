@@ -2202,7 +2202,7 @@ button.pressed {
   top: 18px;
   right: 18px;
   z-index: 90;
-  width: 188px;
+  width: 170px;
   background: #fff48f;
   border: 1px solid #000;
   box-shadow: 2px 2px 0 #000;
@@ -2296,14 +2296,14 @@ button.pressed {
 }
 
 .rover-btn img {
-  height: 136px;
+  height: 120px;
   width: auto;
   display: block;
   filter: drop-shadow(2px 2px 0 #000);
 }
 
 .rover-bubble {
-  width: 290px;
+  width: 215px;
   background: #ffffe1;
   box-shadow: var(--bevel-out), 2px 2px 0 #000;
 }
@@ -2333,10 +2333,12 @@ button.pressed {
 .rover-say {
   margin: 0;
   padding: 10px 12px 8px;
-  font-family: 'Pixelated MS Sans Serif', Arial, sans-serif;
-  font-size: 12px;
-  line-height: 1.5;
+  font-family: Tahoma, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.45;
   color: #000;
+  -webkit-font-smoothing: antialiased;
 }
 
 .rover-say-foot {
