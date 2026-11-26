@@ -10,7 +10,6 @@ import Gigs from './components/Gigs.jsx';
 import Links from './components/Links.jsx';
 import Contact from './components/Contact.jsx';
 import Shop from './components/Shop.jsx';
-import StickyNote from './components/StickyNote.jsx';
 import RoverChat from './components/RoverChat.jsx';
 import ShutDown from './components/ShutDown.jsx';
 import { CartProvider } from './cart.jsx';
@@ -51,7 +50,6 @@ export default function App() {
             <Shop path={path} />
           ) : (
             <>
-              <StickyNote />
               <Welcome />
               <MusicPlayer />
               <Paintings />

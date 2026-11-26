@@ -2330,46 +2330,28 @@ button.pressed {
   line-height: 1;
 }
 
-.rover-messages {
-  height: 150px;
-  margin: 6px;
-  padding: 8px;
-  background: #fff;
+.rover-say {
+  margin: 0;
+  padding: 10px 10px 6px;
   font-family: 'Pixelated MS Sans Serif', Arial, sans-serif;
   font-size: 11px;
-  line-height: 1.45;
+  line-height: 1.5;
+  color: #000;
+}
+
+.rover-say-foot {
   display: flex;
-  flex-direction: column;
-  gap: 6px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2px 8px 6px;
+  font-family: 'Pixelated MS Sans Serif', Arial, sans-serif;
+  font-size: 10px;
 }
 
-.rover-empty {
-  margin: auto 0;
-  text-align: center;
-  color: #808080;
-}
-
-.rover-msg {
-  word-break: break-word;
-}
-
-.rover-msg.is-user {
-  color: #000080;
-}
-
-.rover-form {
-  display: flex;
-  gap: 4px;
-  padding: 0 6px 6px;
-}
-
-.rover-form input {
-  flex: 1;
-  min-width: 0;
-}
-
-.rover-form button {
-  min-width: 48px;
+.rover-say-foot button {
+  min-width: 54px;
+  min-height: 20px;
+  padding: 0 8px;
 }
 
 /* =========================================================
