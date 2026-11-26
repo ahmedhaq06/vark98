@@ -12,7 +12,6 @@ const LINES = [
 /** Windows XP Search Companion-style dog in the bottom-right corner. */
 export default function RoverChat() {
   const [open, setOpen] = useState(true);
-  const [hovered, setHovered] = useState(false);
   const [idx, setIdx] = useState(0);
 
   useEffect(() => {
@@ -21,7 +20,6 @@ export default function RoverChat() {
     return () => clearInterval(t);
   }, [open]);
 
-  const sprite = open ? '/rover/chat.png' : hovered ? '/rover/hover.png' : '/rover/idle.png';
   const next = () => setIdx((i) => (i + 1) % LINES.length);
 
   return (
@@ -50,12 +48,10 @@ export default function RoverChat() {
         type="button"
         className="rover-btn"
         onClick={() => (open ? next() : setOpen(true))}
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
         aria-label={open ? 'Next tip' : `Show ${site.artist} updates`}
         title={open ? 'Click for next update' : `Click to hear from ${site.artist}`}
       >
-        <img src={sprite} alt="Desktop dog assistant" />
+        <img src="/rover/idle.png" alt="Desktop dog assistant" />
       </button>
     </div>
   );
