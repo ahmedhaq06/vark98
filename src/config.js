@@ -8,6 +8,7 @@ export const site = {
     { label: 'Apple Music', sub: 'Listen on Apple Music', url: 'https://music.apple.com/in/artist/vark/1494625555?ls' },
     { label: 'YouTube', sub: '@vark_19', url: 'https://youtube.com/@vark_19?si=xJZYMdlgS1JGScAA' },
     { label: 'Instagram', sub: '@vark_19', url: 'https://www.instagram.com/vark_19?knvt=dnM4OHZhNm1yd2pu' },
+    { label: "VARK's Gallery, Instagram", sub: '@pratibimbmeriaankhmesirf', url: 'https://www.instagram.com/pratibimbmeriaankhmesirf' },
   ],
 };
 
