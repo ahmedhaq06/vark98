@@ -2,8 +2,8 @@
 
 export const cds = [
   {
-    id: 'vark-cd-01',
-    title: 'VARK — Physical CD Edition',
+    id: 'sundays-cd',
+    title: 'SUNDAYS CD',
     cover: '/cds/cd-01.jpg',
     images: [
       '/cds/cd-01.jpg',
@@ -13,9 +13,9 @@ export const cds = [
       '/cds/cd-01-grass.jpg',
     ],
     year: 2025,
-    price: 499,
+    price: 1200,
     tracks: [], // Add tracklist when ready
-    stock: 25,
-    description: 'Physical jewel-case audio CD by VARK with printed insert & booklet.',
+    stock: 3,
+    description: 'Physical jewel-case audio CD by VARK with printed insert & booklet (3 pcs available).',
   },
 ];
