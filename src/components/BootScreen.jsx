@@ -30,7 +30,7 @@ export default function BootScreen({ durationMs, onDone }) {
         <div className="boot-logo">
           <Icon name="flag" scale={5} className="boot-flag" />
           <div className="boot-wordmark">
-            <span className="boot-small">Desi Hip Hop</span>
+            <span className="boot-small">Website with the dot-com</span>
             <span className="boot-name">
               {site.artist}
               <sup>98</sup>
