@@ -14,6 +14,7 @@ export const cds = [
     ],
     year: 2025,
     price: 1200,
+    trackCount: 10,
     tracks: [], // Add tracklist when ready
     stock: 3,
     description: 'CD for SUNDAYS — a full length project by VARK & .krishav under the collective PRATIYUG, consisting of all the high-end audio .wav files of the album (3 pcs available).',

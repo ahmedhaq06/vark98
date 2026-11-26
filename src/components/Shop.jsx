@@ -44,7 +44,7 @@ function buildCatalog() {
     images: c.images?.length ? c.images : [c.cover],
     price: c.price,
     year: c.year,
-    subtitle: `${c.tracks?.length || 0} tracks · Audio CD`,
+    subtitle: `${c.tracks?.length || c.trackCount ? `${c.tracks?.length || c.trackCount} tracks · ` : ''}Audio CD`,
     tracks: c.tracks,
     description: c.description,
     unavailable: c.stock === 0,
