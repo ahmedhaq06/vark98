@@ -278,7 +278,7 @@ function ProductDetail({ item, inCart, onAdd, onBack }) {
                   @pratibimbmeriaankhmesirf
                 </a>
                 ) or{' '}
-                <a href={`mailto:${site.email || 'vark19team@gmail.com'}`}>email</a>, I am always available to here your queries.
+                <a href={`mailto:${site.email || 'vark19team@gmail.com'}`}>{site.email || 'vark19team@gmail.com'}</a>, I am always available to here your queries.
               </p>
             </div>
           )}
