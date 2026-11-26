@@ -98,6 +98,7 @@ export default function CDs() {
               <p>
                 {open.year} · {formatPrice(open.price)}
               </p>
+              {open.description && <p className="cd-desc">{open.description}</p>}
               {open.tracks?.length > 0 && (
                 <ol className="cd-tracks">
                   {open.tracks.map((t) => (

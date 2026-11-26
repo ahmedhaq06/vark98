@@ -16,6 +16,6 @@ export const cds = [
     price: 1200,
     tracks: [], // Add tracklist when ready
     stock: 3,
-    description: 'Physical jewel-case audio CD by VARK with printed insert & booklet (3 pcs available).',
+    description: 'CD for SUNDAYS — a full length project by VARK & .krishav under the collective PRATIYUG, consisting of all the high-end audio .wav files of the album (3 pcs available).',
   },
 ];
